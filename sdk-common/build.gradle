@@ -1,0 +1,33 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+}
+
+android {
+    namespace 'com.devcoze.apm.sdk.common'
+    compileSdk {
+        version = release(36)
+    }
+
+    defaultConfig {
+        minSdk 21
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+    // 只允许基础 AndroidX
+    implementation(libs.androidx.annotation)
+
+    // 依赖 api 层
+    api(project(":sdk-api"))
+
+}
