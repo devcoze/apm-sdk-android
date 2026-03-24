@@ -1,6 +1,6 @@
 package com.devcoze.apm.sdk.api
 
-class ApmConfig internal constructor(
+class SdkConfig internal constructor(
     val modules: List<SdkModule>
 ){
 
@@ -11,7 +11,7 @@ class ApmConfig internal constructor(
             modules += module
         }
 
-        fun build(): ApmConfig = ApmConfig(modules)
+        fun build(): SdkConfig = SdkConfig(modules)
     }
 
 }
